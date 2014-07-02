@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link href="jqueryMobile/jquery.mobile-git.css" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-git.js"></script>
+</head>
+<body style="display: none;" class="background-normal">
+	<div data-role="page" id="page" class="background-init" data-theme="b">
+		<div data-role="content" style="padding: 15px;" class="body-content">
+			<h3 class="title" data-mini="true" style="margin: 5% auto">
+				Como está sua saúde emocional?<br>Faça o teste e descubra!
+			</h3>
+			<a href="#page1" data-role="button" id="button1"
+				style="max-width: 400px; margin: 15% auto" onclick="paginator()">Começar</a>
+		</div>
+	</div>
+	<!-- page1 -->
+	<div data-role="page" id="page1">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Consegue restabelecer a calma quando
+				está irritado?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page2" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="flip">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page2" data-role="button" id="button0"
+						data-transition="flip" onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+			<div class="contador">
+			</div>
+		</div>
+	</div>
+	<!-- /page1 -->
+
+	<!-- page2 -->
+	<div data-role="page" id="page2">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Sente-se culpado ou demasiadamente
+				constrangido pelos erros do passado?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page3" data-role="button" id="button"
+						data-transition="flow" onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page3" data-role="button" id="button0"
+						onclick="addValor();paginator()" data-transition="flow">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page2 -->
+
+	<!-- page3 -->
+	<div data-role="page" id="page3">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Consegue estimar e respeitar qualquer
+				pessoa quando se propõe a isso?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page4" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="pop">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page4" data-role="button" id="button0"
+						data-transition="pop"  onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page3 -->
+	<!-- page4 -->
+	<div data-role="page" id="page4">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Tem preocupação com o futuro?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page5" data-role="button" id="button"
+						data-transition="slide"  onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page5" data-role="button" id="button0"
+						onclick="addValor();paginator()" data-transition="slide">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page4 -->
+
+	<!-- page5 -->
+	<div data-role="page" id="page5">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">É paciente e tolerante com os outros?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page6" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="slidedown">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page6" data-role="button" id="button0"
+						data-transition="slidedown"  onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page5 -->
+
+	<!-- page6 -->
+	<div data-role="page" id="page6">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">É ciumento?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page7" data-role="button" id="button"
+						data-transition="turn"  onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page7" data-role="button" id="button0"
+						onclick="addValor(); paginator()" data-transition="turn">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page6 -->
+
+	<!-- page7 -->
+	<div data-role="page" id="page7">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Está satisfeito com sua maneira de ser?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page8" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="slide">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page8" data-role="button" id="button0"
+						data-transition="slide" onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page7 -->
+
+	<!-- page8 -->
+	<div data-role="page" id="page8">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Sente-se incomodado com a irritação?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page9" data-role="button" id="button"
+						data-transition="slidefade"  onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page9" data-role="button" id="button0"
+						onclick="addValor();paginator()" data-transition="pop">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page8 -->
+
+	<!-- page9 -->
+	<div data-role="page" id="page9">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Está satisfeito com seu modo de se
+				relacionar com as outras pessoas?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page10" data-role="button" id="button"
+						onclick="addValor();paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page10" data-role="button" id="button0"  onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page9 -->
+
+	<!-- page10 -->
+	<div data-role="page" id="page10">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Costuma fazer autocritica
+				demasiadamente?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page11" data-role="button" id="button"  onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page11" data-role="button" id="button0"
+						onclick="addValor();paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page10 -->
+
+	<!-- page11 -->
+	<div data-role="page" id="page11">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Consegue boas soluções para os problemas
+				de relacionamento?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page12" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="slide">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page12" data-role="button" id="button0" onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page11 -->
+
+	<!-- page12 -->
+	<div data-role="page" id="page12">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Tem tendência para tristeza e desanimo?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page13" data-role="button" id="button"
+						data-transition="pop" onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page13" data-role="button" id="button0"
+						onclick="addValor();paginator()" data-transition="pop">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page12 -->
+
+	<!-- page13 -->
+	<div data-role="page" id="page13">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Percebe com facilidade as verdadeiras
+				intenções dos outros?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page14" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="pop">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page14" data-role="button" id="button0"
+						data-transition="pop" onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page13 -->
+
+	<!-- page14 -->
+	<div data-role="page" id="page14">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Sente frequentemente vergonha de si
+				mesmo?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page15" data-role="button" id="button" onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page15" data-role="button" id="button0"
+						onclick="addValor();paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page14 -->
+
+	<!-- page15 -->
+	<div data-role="page" id="page15">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Quando está aborrecido ou desanimado
+				sabe exatamente os motivos?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page16" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="pop">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page16" data-role="button" id="button0"
+						data-transition="pop" onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page15 -->
+
+	<!-- page16 -->
+	<div data-role="page" id="page16">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Tem dificuldade para falar de seus
+				sentimentos e emoções?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page17" data-role="button" id="button"
+						data-transition="flip"  onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page17" data-role="button" id="button0"
+						onclick="addValor();paginator()" data-transition="flip">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page16 -->
+
+	<!-- page17 -->
+	<div data-role="page" id="page17">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Quando fica aborrecido ou desanimado
+				sabe como sair da situação?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page18" data-role="button" id="button"
+						onclick="addValor();paginator()" data-transition="flip">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page18" data-role="button" id="button0"
+						data-transition="flip"  onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page17 -->
+
+	<!-- page18 -->
+	<div data-role="page" id="page18">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Tem a impressão de que nunca se curar do
+				estresse?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page19" data-role="button" id="button"
+						data-transition="flip"  onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page19" data-role="button" id="button0"
+						onclick="addValor();paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page18 -->
+	<!-- page19 -->
+	<div data-role="page" id="page19">
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Costuma elogiar e apreciar quem merece?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page20" data-role="button" id="button"
+						onclick="addValor();paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page20" data-role="button" id="button0"  onclick="paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /page19 -->
+
+	<!-- page20 -->
+	<div data-role="page" id="page20">
+
+		<div data-role="content" style="padding: 15px">
+			<p class="text-question">Quando alguma coisa de ruim lhe acontece
+				você se culpa duramente?</p>
+			<div class="ui-grid-a saude-content">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page21" data-role="button" id="button" onclick="paginator()">SIM</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#page21" data-role="button" id="button0"
+						onclick="addValor();paginator()">NÃO</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- /page20 -->
+
+	<!-- page21 -->
+	<div data-role="page" id="page21">
+		<div data-role="content" style="padding: 15px">
+			<a href="#" data-role="button" id="result"
+				 class="result-tela" onclick="exibe()">Resultado</a>
+			<p id="texto" class="text-question"></p>
+			<div id="options" class="ui-grid-a"
+				style="margin: 5% auto; display: none; padding: 12; margin: 10% auto">
+				<div class="ui-block-a saude-bottom">
+					<a href="#page" data-role="button" id="button" onclick="resetar()">Novamente</a>
+				</div>
+				<div class="ui-block-b saude-bottom">
+					<a href="#" data-role="button" id="button0">Sair</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="background-init" data-role="page" id="page22"
+		data-theme="b">
+		<div class="body-content" data-role="content" style="padding: 15px;">
+			<h3 class="title" data-mini="true" style="margin: 30% auto">
+				Saindo..</h3>
+			<div style="margin-top: -12%; margin-left: 40%;">
+				<img alt="" src="images/loading.gif">
+			</div>
+		</div>
+	</div>
+	<!-- /page21 -->
+
+<h5 id="contador"></h5>
+
+	<script src="js/initOptions.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+	
+</body>
+</html>
